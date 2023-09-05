@@ -17,16 +17,16 @@ public class HiddenWord {
         String hint = "";
         for (int i = 0; i < guess.length(); ++i) {
             char guessLetter = guess.charAt(i);
-            boolean present = false, same = false;
+            boolean present = false, correct = false;
             for (int j = 0; j < hiddenWord.length(); ++j) {
                 if (guessLetter == hiddenWord.charAt(j)) {
                     present = true;
-                    if (i == j) same = true;
+                    if (i == j) correct = true;
                     break;
                 }
             }
 
-            if (same) {
+            if (correct) {
                 hint += guess.charAt(i);
             } else if (present) {
                 hint += "+";
